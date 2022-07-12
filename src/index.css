@@ -1,0 +1,144 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*** ------------ ***/
+/*** RESET CSS ***/
+/*** ------------ ***/
+
+@layer base {
+  html {
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+      "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+      "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Remove list styles (bullets/numbers) */
+  ol,
+  ul,
+  menu {
+    list-style: none;
+  }
+
+  /* Reapply the pointer cursor for anchor tags */
+  a {
+    display: inline-block;
+    text-decoration: none;
+    color: blue;
+    cursor: pointer;
+  }
+
+  input,
+  button,
+  textarea,
+  select {
+    color: inherit;
+    font: inherit;
+    letter-spacing: inherit;
+  }
+
+  input,
+  textarea,
+  button {
+    border: 1px solid gray;
+    outline: none;
+  }
+
+  button {
+    outline: none;
+    /* background: transparent; */
+    border: none;
+  }
+
+  /* For images to not be able to exceed their container */
+  embed,
+  iframe,
+  img,
+  object,
+  video {
+    display: block;
+    max-width: 100%;
+  }
+
+  /* removes spacing between cells in tables */
+  table {
+    border-collapse: collapse;
+  }
+
+  /* revert the 'white-space' property for textarea elements on Safari */
+  textarea {
+    white-space: revert;
+  }
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+      monospace;
+  }
+
+  /* local changes */
+  select:focus-visible {
+    border: none;
+    outline: none;
+  }
+  /* 
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 1;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-width: thin;
+  } */
+
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  /* Just for the Availablilty Component  */
+  #availability::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: auto;
+    height: auto;
+    color: transparent;
+    background: transparent;
+    /* border: 2px solid black; */
+    z-index: 10;
+  }
+}
+
+/*** ------------ ***/
+
+@layer components {
+  .btn {
+    @apply text-sm font-semibold py-[14px] px-6 cursor-pointer rounded-lg drop-shadow-md;
+  }
+  .btn-secondary {
+    @apply text-primary bg-transparent border-2 border-solid border-slate-300/50;
+  }
+  .btn-primary {
+    @apply text-white bg-primary;
+  }
+}
