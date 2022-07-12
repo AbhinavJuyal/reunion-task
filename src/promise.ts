@@ -1,6 +1,8 @@
 import { IEstate, IEstateData, IParams } from "./app";
 import { estateData } from "./data";
 
+// mimcs a backend API endpoint which takes parameteres and return the filtered data.
+// The promise resolves 90% of the time
 let counter = 0;
 export const getEstateData = async ({
   location,

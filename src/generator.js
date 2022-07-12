@@ -1,6 +1,6 @@
 /*
-schema
-{
+      schema:
+      {
         id: number, (100 - 999)
         price: number, (200, 5000)
         apartmentName: string,
@@ -19,6 +19,7 @@ schema
         availability: date,
       }
       
+      // How filtering params will be working
       l === location, (address.state)
       d =< availability
       low <= price <= high

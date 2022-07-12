@@ -13,15 +13,17 @@ interface IProps {
   children: React.ReactNode;
 }
 
+// React Context to handle all the filtering mechanism, so that prop drilling doesn't becomes a issue.
+// All the filtering parameters have an default value which together gives all property data on the     screen.
 const SocketContext = createContext<ISocketContext | {}>({});
 
 export const SearchProvider = ({ children }: IProps) => {
-  const [location, setLocation] = useState<string>("All");
-  const [date, setDate] = useState<string>("");
-  const [minPrice, setMinPrice] = useState<number | undefined>(200);
-  const [maxPrice, setMaxPrice] = useState<number | undefined>(5000);
-  const [propertyType, setPropertyType] = useState<string>("All");
-  const [renderArr, setRenderArr] = useState<IEstate[]>([]);
+  const [location, setLocation] = useState<string>("All"); // state
+  const [date, setDate] = useState<string>(""); // the move-in date
+  const [minPrice, setMinPrice] = useState<number | undefined>(200); // min price amount
+  const [maxPrice, setMaxPrice] = useState<number | undefined>(5000); // max price amount
+  const [propertyType, setPropertyType] = useState<string>("All"); // property type
+  const [renderArr, setRenderArr] = useState<IEstate[]>([]); // resulting array after filtering
 
   const fetchData = useCallback(() => {
     getEstateData({ location, date, minPrice, maxPrice, propertyType })
@@ -38,9 +40,14 @@ export const SearchProvider = ({ children }: IProps) => {
   }, [location, date, minPrice, maxPrice, propertyType, getEstateData]);
 
   useEffect(() => {
+    // requesting data with default values when the entire context loads for the first time.
     fetchData();
   }, []);
 
+  /**
+   * OnSubmit Event Handler for Search Form
+   * @param e
+   */
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     fetchData();

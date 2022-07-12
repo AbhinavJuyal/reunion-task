@@ -1,5 +1,6 @@
 import { IEstateData } from "./app";
 
+// mock property data - check generator.js for more details.
 export const estateData: IEstateData = [
   {
     id: 44,
