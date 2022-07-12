@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import { ISocketContext } from "../app";
 import { useSearch } from "../context/SearchContext";
 import Card from "./Card";

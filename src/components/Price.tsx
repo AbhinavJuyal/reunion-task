@@ -3,13 +3,6 @@ import { ISocketContext } from "../app";
 import { useSearch } from "../context/SearchContext";
 import { MdArrowDropDownCircle } from "react-icons/md";
 
-interface IProps {
-  minPrice: number | undefined;
-  setMinPrice: React.Dispatch<React.SetStateAction<number | undefined>>;
-  maxPrice: number | undefined;
-  setMaxPrice: React.Dispatch<React.SetStateAction<number | undefined>>;
-}
-
 const PriceParams = () => {
   const { minPrice, setMinPrice, maxPrice, setMaxPrice } =
     useSearch() as ISocketContext;

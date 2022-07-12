@@ -15,15 +15,6 @@ interface IProps {
 
 const SocketContext = createContext<ISocketContext | {}>({});
 
-const dateDefValue: string = new Date()
-  .toLocaleString()
-  .split(",")[0]
-  .split("/")
-  .reverse()
-  .join("-")
-  .toString();
-
-let counter = 0;
 export const SearchProvider = ({ children }: IProps) => {
   const [location, setLocation] = useState<string>("All");
   const [date, setDate] = useState<string>("");
@@ -47,12 +38,10 @@ export const SearchProvider = ({ children }: IProps) => {
   }, [location, date, minPrice, maxPrice, propertyType, getEstateData]);
 
   useEffect(() => {
-    console.log("here1");
     fetchData();
   }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    console.log("here2");
     e.preventDefault();
     fetchData();
   };

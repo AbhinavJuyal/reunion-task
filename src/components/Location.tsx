@@ -1,12 +1,5 @@
-import React from "react";
 import { ISocketContext } from "../app";
 import { useSearch } from "../context/SearchContext";
-import { MdArrowDropDownCircle } from "react-icons/md";
-
-interface IProps {
-  location: string;
-  setLocation: React.Dispatch<React.SetStateAction<string>>;
-}
 
 const locations: string[] = [
   "Maryland",
@@ -42,9 +35,6 @@ const Location = () => {
             ))}
           </optgroup>
         </select>
-        {/* <button type="button" className="text-primary">
-          <MdArrowDropDownCircle size="24" />
-        </button> */}
       </label>
     </div>
   );

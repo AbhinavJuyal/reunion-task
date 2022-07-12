@@ -1,11 +1,5 @@
-import React from "react";
 import { ISocketContext } from "../app";
 import { useSearch } from "../context/SearchContext";
-
-interface IProps {
-  propertyType: string;
-  setPropertyType: React.Dispatch<React.SetStateAction<string>>;
-}
 
 const PropertyTypes: string[] = ["Apartment", "Condo", "House", "Townhouse"];
 

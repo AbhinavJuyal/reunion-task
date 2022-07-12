@@ -7,8 +7,6 @@ import { IoSparklesSharp } from "react-icons/io5";
 import { AiOutlineHeart } from "react-icons/ai";
 import { Images } from "../assets";
 
-// after:w-4 after:h-4 after:absolute after:bg-red-900 after:content-[''] after:left-0 after:bottom-0 after:rounded-lg after:skew-x-12 after:skew-y-12
-
 const Card = (props: any) => {
   const {
     image,

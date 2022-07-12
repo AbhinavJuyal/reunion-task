@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { ISocketContext } from "../app";
 import { useSearch } from "../context/SearchContext";
 import Availability from "./Availability";

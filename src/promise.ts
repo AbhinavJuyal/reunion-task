@@ -23,7 +23,7 @@ export const getEstateData = async ({
       );
     });
     setTimeout(() => {
-      if (Math.random() > 0.9) {
+      if (Math.random() < 0.9) {
         resolve(filteredEstateData);
       }
       reject("Error: Could not fetch data");
